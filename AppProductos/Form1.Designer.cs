@@ -33,12 +33,18 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.txtCodigo = new System.Windows.Forms.TextBox();
+            this.txtNomnbreP = new System.Windows.Forms.TextBox();
+            this.txtPrecioVenta = new System.Windows.Forms.TextBox();
+            this.txtFecha = new System.Windows.Forms.TextBox();
+            this.txtUnidad = new System.Windows.Forms.TextBox();
+            this.listViewRegistro = new System.Windows.Forms.ListView();
+            this.btnAgregarRegistro = new System.Windows.Forms.Button();
+            this.columnCodigo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnProducto = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnPrecioV = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnFechaC = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnUnidad = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // label1
@@ -86,62 +92,104 @@
             this.label5.TabIndex = 4;
             this.label5.Text = "UNIDAD:";
             // 
-            // textBox1
+            // txtCodigo
             // 
-            this.textBox1.Location = new System.Drawing.Point(38, 75);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(93, 20);
-            this.textBox1.TabIndex = 5;
+            this.txtCodigo.Location = new System.Drawing.Point(38, 75);
+            this.txtCodigo.Name = "txtCodigo";
+            this.txtCodigo.Size = new System.Drawing.Size(93, 20);
+            this.txtCodigo.TabIndex = 5;
             // 
-            // textBox2
+            // txtNomnbreP
             // 
-            this.textBox2.Location = new System.Drawing.Point(157, 75);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(176, 20);
-            this.textBox2.TabIndex = 6;
+            this.txtNomnbreP.Location = new System.Drawing.Point(157, 75);
+            this.txtNomnbreP.Name = "txtNomnbreP";
+            this.txtNomnbreP.Size = new System.Drawing.Size(176, 20);
+            this.txtNomnbreP.TabIndex = 6;
             // 
-            // textBox3
+            // txtPrecioVenta
             // 
-            this.textBox3.Location = new System.Drawing.Point(379, 75);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 7;
+            this.txtPrecioVenta.Location = new System.Drawing.Point(379, 75);
+            this.txtPrecioVenta.Name = "txtPrecioVenta";
+            this.txtPrecioVenta.Size = new System.Drawing.Size(100, 20);
+            this.txtPrecioVenta.TabIndex = 7;
             // 
-            // textBox4
+            // txtFecha
             // 
-            this.textBox4.Location = new System.Drawing.Point(513, 75);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(138, 20);
-            this.textBox4.TabIndex = 8;
+            this.txtFecha.Location = new System.Drawing.Point(513, 75);
+            this.txtFecha.Name = "txtFecha";
+            this.txtFecha.Size = new System.Drawing.Size(138, 20);
+            this.txtFecha.TabIndex = 8;
             // 
-            // textBox5
+            // txtUnidad
             // 
-            this.textBox5.Location = new System.Drawing.Point(688, 75);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 9;
+            this.txtUnidad.Location = new System.Drawing.Point(688, 75);
+            this.txtUnidad.Name = "txtUnidad";
+            this.txtUnidad.Size = new System.Drawing.Size(100, 20);
+            this.txtUnidad.TabIndex = 9;
             // 
-            // listView1
+            // listViewRegistro
             // 
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(23, 130);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(764, 304);
-            this.listView1.TabIndex = 10;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
+            this.listViewRegistro.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnCodigo,
+            this.columnProducto,
+            this.columnPrecioV,
+            this.columnFechaC,
+            this.columnUnidad});
+            this.listViewRegistro.HideSelection = false;
+            this.listViewRegistro.Location = new System.Drawing.Point(23, 130);
+            this.listViewRegistro.Name = "listViewRegistro";
+            this.listViewRegistro.Size = new System.Drawing.Size(764, 304);
+            this.listViewRegistro.TabIndex = 10;
+            this.listViewRegistro.UseCompatibleStateImageBehavior = false;
+            this.listViewRegistro.View = System.Windows.Forms.View.Details;
+            // 
+            // btnAgregarRegistro
+            // 
+            this.btnAgregarRegistro.Location = new System.Drawing.Point(38, 465);
+            this.btnAgregarRegistro.Name = "btnAgregarRegistro";
+            this.btnAgregarRegistro.Size = new System.Drawing.Size(146, 23);
+            this.btnAgregarRegistro.TabIndex = 11;
+            this.btnAgregarRegistro.Text = "Agregar producto";
+            this.btnAgregarRegistro.UseVisualStyleBackColor = true;
+            this.btnAgregarRegistro.Click += new System.EventHandler(this.btnAgregarRegistro_Click);
+            // 
+            // columnCodigo
+            // 
+            this.columnCodigo.Text = "Codigo";
+            this.columnCodigo.Width = 93;
+            // 
+            // columnProducto
+            // 
+            this.columnProducto.Text = "Nombre Producto";
+            this.columnProducto.Width = 219;
+            // 
+            // columnPrecioV
+            // 
+            this.columnPrecioV.Text = "PrecioVenta";
+            this.columnPrecioV.Width = 128;
+            // 
+            // columnFechaC
+            // 
+            this.columnFechaC.Text = "Fecha Compra";
+            this.columnFechaC.Width = 190;
+            // 
+            // columnUnidad
+            // 
+            this.columnUnidad.Text = "Unidad";
+            this.columnUnidad.Width = 130;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1114, 585);
-            this.Controls.Add(this.listView1);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.btnAgregarRegistro);
+            this.Controls.Add(this.listViewRegistro);
+            this.Controls.Add(this.txtUnidad);
+            this.Controls.Add(this.txtFecha);
+            this.Controls.Add(this.txtPrecioVenta);
+            this.Controls.Add(this.txtNomnbreP);
+            this.Controls.Add(this.txtCodigo);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -161,12 +209,18 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.TextBox txtCodigo;
+        private System.Windows.Forms.TextBox txtNomnbreP;
+        private System.Windows.Forms.TextBox txtPrecioVenta;
+        private System.Windows.Forms.TextBox txtFecha;
+        private System.Windows.Forms.TextBox txtUnidad;
+        private System.Windows.Forms.ListView listViewRegistro;
+        private System.Windows.Forms.Button btnAgregarRegistro;
+        private System.Windows.Forms.ColumnHeader columnCodigo;
+        private System.Windows.Forms.ColumnHeader columnProducto;
+        private System.Windows.Forms.ColumnHeader columnPrecioV;
+        private System.Windows.Forms.ColumnHeader columnFechaC;
+        private System.Windows.Forms.ColumnHeader columnUnidad;
     }
 }
 
